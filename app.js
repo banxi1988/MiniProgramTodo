@@ -1,6 +1,6 @@
 //app.js
-App({
-  onLaunch: function () {
+class TodoApp{
+  onLaunch() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,8 +32,11 @@ App({
         }
       }
     })
-  },
-  globalData: {
+  }
+  globalData = {
     userInfo: null
   }
-})
+}
+
+const todoApp = new TodoApp()
+App(todoApp)
